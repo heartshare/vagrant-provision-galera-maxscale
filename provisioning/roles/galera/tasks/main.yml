@@ -13,9 +13,9 @@
 - name: Create maxadmin user
   mysql_user: name=maxadmin host="%" password=maxpwd priv="*.*:SELECT,SHOW DATABASES" state=present
 
-- name: enable/start MariaDB server
-  systemd: name=mariadb state=started enabled=True
-
-
 - include: bootstrap.yml
   when: is_primary
+
+- name: enable/start MariaDB server {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}
+  systemd: name=mariadb state=started enabled=True
+

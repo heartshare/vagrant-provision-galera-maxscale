@@ -21,7 +21,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "provisioning/main.yml"
     ansible.groups = {
-      "galera" => ["galera[1:3]"],
+      "galera" => ["galera1","galera2","galera3"],
       "mxs" => ["maxscale"]
     }
   end
