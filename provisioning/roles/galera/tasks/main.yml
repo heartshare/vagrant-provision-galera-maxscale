@@ -3,7 +3,6 @@
 - name: Install MariaDB configuration template
   template: src=galera.cnf dest=/etc/my.cnf.d/
 
-
 - name: Install MYSQL-python
   yum: name=MySQL-python state=present
 
@@ -18,4 +17,3 @@
 
 - name: enable/start MariaDB server {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}
   systemd: name=mariadb state=started enabled=True
-

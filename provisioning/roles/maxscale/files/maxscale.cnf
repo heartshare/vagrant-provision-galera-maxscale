@@ -65,18 +65,18 @@ port=6603
 
 [galera1]
 type=server
-address=10.128.0.13
+address=192.168.18.121
 port=3306
 protocol=MySQLBackend
 
 [galera2]
 type=server
-address=10.128.0.14
+address=192.168.18.122
 port=3306
 protocol=MySQLBackend
 
 [galera3]
 type=server
-address=10.128.0.15
+address=192.168.18.123
 port=3306
 protocol=MySQLBackend

@@ -1,10 +1,5 @@
-- name: install MaxScale 2.1 repository
-  yum_repository:
-    name:        mariadb-maxscale
-    description: MariaDB MaxScale
-    baseurl:     https://downloads.mariadb.com/MaxScale/2.1/rhel/$releasever/$basearch
-    gpgkey:      https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-    gpgcheck:    1
+- name: MariaDB Package Repository Setup
+  shell: curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 
 - name: install MaxScale 2.1
   yum: name=maxscale state=latest update_cache=yes
