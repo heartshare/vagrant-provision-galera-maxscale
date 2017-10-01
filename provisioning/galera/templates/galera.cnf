@@ -1,0 +1,15 @@
+[mysqld]
+binlog_format=ROW
+innodb_buffer_pool_size=64M
+innodb_autoinc_lock_mode=2
+innodb_flush_log_at_trx_commit=2
+bind-address=0.0.0.0
+
+[galera]
+wsrep_provider=/usr/lib64/galera/libgalera_smm.so
+wsrep_cluster_name="my_wsrep_cluster"
+wsrep_cluster_address=gcomm://
+wsrep_node_address={{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}
+server_id={{ server_id }}
+wsrep_sst_method=rsync
+gtid_ignore_duplicates=1

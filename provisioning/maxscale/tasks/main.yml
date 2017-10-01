@@ -1,0 +1,17 @@
+- name: install MaxScale 2.1 repository
+  yum_repository:
+    name:        mariadb-maxscale
+    description: mariadb-maxscale
+    baseurl:     https://downloads.mariadb.com/MaxScale/2.1/rhel/$releasever/$basearch
+    gpgkey:      file:///etc/pki/rpm-gpg/MariaDB-MaxScale-GPG-KEY
+    gpgcheck:    1
+    enabled:     1
+
+- name: install MaxScale 2.1
+  yum: name=maxscale state=latest update_cach=yes
+
+- name: copy maxscale configuration
+  copy: src=maxscale.cnf dest=/etc/maxscale.cnf
+
+- name: enable/start MaxScale
+  systemd: name=maxscale state=started enabled=True

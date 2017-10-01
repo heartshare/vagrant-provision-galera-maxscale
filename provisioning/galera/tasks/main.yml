@@ -1,0 +1,21 @@
+- include: mariadb-centos7.yml
+
+- name: Install MariaDB configuration template
+  template: src=galera.cnf dest=/etc/my.cnf.d/
+
+
+- name: Install MYSQL-python
+  yum: name=MySQL-python state=present
+
+- name: Create maxuser(super) user
+  mysql_user: name=maxuser host=% password=maxpwd priv=*.*:ALL state=present
+
+- name: Create maxadmin user
+  mysql_user: name=maxadmin host="%" password=maxpwd priv="*.*:SELECT,SHOW DATABASES" state=present
+
+- name: enable/start MariaDB server
+  systemd: name=mariadb state=started enabled=True
+
+
+- include: bootstrap.yml
+  when: is_primary

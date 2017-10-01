@@ -1,0 +1,3 @@
+- name: bootstrap the first node
+  shell:  wsrep_new_cluster
+  notify: join servers

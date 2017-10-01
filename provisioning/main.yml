@@ -1,0 +1,30 @@
+- hosts: all
+  vars:
+    locale: en_US.UTF-8
+    keymap: jp106
+    zone:   Asia/Tokyo
+  sudo: yes
+  user: vagrant
+  roles:
+    - common
+    - server
+
+- hosts: galera1:galera2:galera3
+  vars:
+    locale: en_US.UTF-8
+    keymap: jp106
+    zone:   Asia/Tokyo
+  sudo: yes
+  user: vagrant
+  roles:
+    - galera
+
+- hosts: maxscale
+  vars:
+    locale: en_US.UTF-8
+    keymap: jp106
+    zone:   Asia/Tokyo
+  sudo: yes
+  user: vagrant
+  roles:
+    - maxscale
