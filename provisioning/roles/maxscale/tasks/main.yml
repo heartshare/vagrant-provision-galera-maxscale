@@ -8,4 +8,4 @@
   copy: src=maxscale.cnf dest=/etc/maxscale.cnf
 
 - name: enable/start MaxScale
-  systemd: name=maxscale state=started enabled=True
+  systemd: name=maxscale state=restarted enabled=True

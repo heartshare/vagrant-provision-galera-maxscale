@@ -5,7 +5,7 @@ Vagrant.configure(2) do |config|
   1.upto(3) do |i|
     config.vm.define "galera#{i}" do |node|
       node.vm.hostname = "galera#{i}"
-      node.vm.network :private_network, ip: "192.168.18.12#{i}"
+      node.vm.network :private_network, ip:"192.168.18.12#{i}"
       node.vm.box = "centos/7"
     end
   end
