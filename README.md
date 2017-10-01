@@ -1,4 +1,4 @@
-# Vagrant provisioning MariaDB 10.2 / CentOS 7
+# Vagrant : provisioning MariaDB 10.2 Galera Clusteer and MaxScale / CentOS 7
 
 ## Requirements
 
