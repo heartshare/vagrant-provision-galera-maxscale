@@ -3,4 +3,4 @@
     name:    mariadb
     state:   started
     enabled: True
-when: not is_primary
+    when:    not is_primary

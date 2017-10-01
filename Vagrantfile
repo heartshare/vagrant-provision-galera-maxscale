@@ -13,19 +13,16 @@ Vagrant.configure(2) do |config|
     node.vm.box = "centos/7"
   end
 
-  end
   config.vm.provider :vmware_workstation do |v|
     v.vmx['memsize'] = "1024"
     v.vmx['numvcpus'] = 1
   end
 
   config.vm.provision "ansible_local" do |ansible|
-    # ansible.ask_sudo_pass = true
-    ansible.playbook = "main.yml"
-#    ansible.playbook = "provisioning/main.yml"
+    ansible.playbook = "provisioning/main.yml"
     ansible.groups = {
-      "galera" => ["galera1", "galera21", "galera3"]
-      "maxscale" => ["maxscale"]
+      "galera" => ["galera[1:3]"],
+      "mxs" => ["maxscale"]
     }
   end
 end

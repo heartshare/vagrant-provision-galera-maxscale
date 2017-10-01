@@ -8,7 +8,7 @@
     enabled:     1
 
 - name: install MaxScale 2.1
-  yum: name=maxscale state=latest update_cach=yes
+  yum: name=maxscale state=latest update_cache=yes
 
 - name: copy maxscale configuration
   copy: src=maxscale.cnf dest=/etc/maxscale.cnf
