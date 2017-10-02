@@ -45,8 +45,8 @@
   args:
     creates: /root/.ssh/id_rsa
 
-- name: generate ~/.ssh/authorized_kyes
-  shell: touch ~/.ssh/authorized_kyes; chmod 600 ~/.ssh/authorized_kyes
+- name: generate ~/.ssh/authorized_keys
+  shell: touch ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys
 
 - name: sshd_config PermitRootLogin yes
   lineinfile:
@@ -55,6 +55,22 @@
     backrefs: yes
     regexp:   '^#PermitRootLogin yes'
     line:     'PermitRootLogin yes'
+
+- name: sshd_config PasswordAuthentication yes
+  lineinfile:
+    dest:     /etc/ssh/sshd_config
+    state:    present
+    backrefs: yes
+    regexp:   '^#PasswordAuthentication yes'
+    line:     'PasswordAuthentication yes'
+
+- name: sshd_config delete PasswordAuthentication no
+  lineinfile:
+    dest:     /etc/ssh/sshd_config
+    state:    present
+    backrefs: yes
+    regexp:   '^PasswordAuthentication no'
+    line:     ''
 
 - name: restart sshd
   systemd:
