@@ -30,4 +30,4 @@
   sysctl: name="net.ipv6.conf.all.disable_ipv6" value=1
 
 - name: add alias
-  shell: echo "alias ls='ls -lahtr'" >> /root/.bashrc
+  shell: echo "alias lr='ls -lahtr'" >> /root/.bashrc
