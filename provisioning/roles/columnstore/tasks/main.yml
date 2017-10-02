@@ -1,0 +1,37 @@
+- name: install GlusterFS repo
+  yum: name=centos-release-gluster state=latest
+
+- name: install GlusterFS and prerequisites of ColumnStore
+  yum: name={{ item }} state=latest
+  with_items:
+    - boost
+    - expect
+    - perl
+    - perl-DBI
+    - openssl
+    - zlib
+    - libaio
+    - rsync
+    - net-tools
+    - snappy
+    - perl-DBD-MySQL
+    - nmap
+    - glusterfs
+    - glusterfs-fuse
+    - glusterfs-server
+    - python-pip
+
+- name: download ColumnStore 1.1.0 beta
+  get_url:
+    url:  https://downloads.mariadb.com/ColumnStore/1.1.0/centos/x86_64/7/mariadb-columnstore-1.1.0-1-centos7.x86_64.rpm.tar.gz
+    dest: /root
+    mode: 0444
+
+- name: extract ColumnStore 1.1.0 beta RPM tar ball
+  unarchive:
+    src:  /root/mariadb-columnstore-1.1.0-1-centos7.x86_64.rpm.tar.gz
+    dest: /root
+    mode: 0444
+
+- name: enable/start glusterd service
+  systemd: name=glusterd state=started enabled=True

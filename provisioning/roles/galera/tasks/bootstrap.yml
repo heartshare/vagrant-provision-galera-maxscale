@@ -1,3 +1,0 @@
-- name: bootstrap the Master node
-  shell:  galera_new_cluster
-  #  notify: join servers

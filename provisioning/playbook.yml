@@ -1,0 +1,21 @@
+- hosts: all
+  vars:
+    locale: en_US.UTF-8
+    keymap: jp106
+    zone:   Asia/Tokyo
+  environment:
+    http_proxy:  192.168.18.139:3128
+    https_proxy: 192.168.18.139:3128
+  sudo: yes
+  user: vagrant
+  roles:
+    - common
+
+- hosts: pm1:pm2:pm3
+  environment:
+    http_proxy:  192.168.18.139:3128
+    https_proxy: 192.168.18.139:3128
+  sudo: yes
+  user: vagrant
+  roles:
+    - columnstore

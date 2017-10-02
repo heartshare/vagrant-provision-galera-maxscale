@@ -1,4 +1,7 @@
-# Vagrant : provisioning MariaDB 10.2 Galera Clusteer and MaxScale / CentOS 7
+# Vagrant : provisioning MariaDB ColumnStore 1.1 / CentOS 7
+
+https://mariadb.com/ja/downloads/columnstore
+https://downloads.mariadb.com/ColumnStore/1.1.0/centos/x86_64/7/mariadb-columnstore-1.1.0-1-centos7.x86_64.rpm.tar.gz
 
 ## Requirements
 
@@ -20,5 +23,3 @@
 
 ## Reference
 * https://www.vagrantup.com/docs/provisioning/ansible_intro.html
-
-
