@@ -25,9 +25,9 @@ https://downloads.mariadb.com/ColumnStore/1.1.0/centos/x86_64/7/mariadb-columnst
 
 ## ToDo after provisioning
 
-* ssh-copy-id pm2 as root on pm1
-* ssh-copy-id pm3 as root on pm1
-* /usr/local/mariadb/columnstore/bin/postConfigure on pm1
+* ssh-copy-id pm2 *as root on pm1*
+* ssh-copy-id pm3 *as root on pm1*
+* /usr/local/mariadb/columnstore/bin/postConfigure *on pm1*
 
 ## Reference
 * https://www.vagrantup.com/docs/provisioning/ansible_intro.html
