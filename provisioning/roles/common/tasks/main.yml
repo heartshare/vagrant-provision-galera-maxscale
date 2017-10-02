@@ -47,3 +47,16 @@
 
 - name: generate ~/.ssh/authorized_kyes
   shell: touch ~/.ssh/authorized_kyes; chmod 600 ~/.ssh/authorized_kyes
+
+- name: sshd_config PermitRootLogin yes
+  lineinfile:
+    dest:     /etc/ssh/sshd_config
+    state:    present
+    backrefs: yes
+    regexp:   '^#PermitRootLogin yes'
+    line:     'PermitRootLogin yes'
+
+- name: restart sshd
+  systemd:
+    name: sshd
+    state: restarted
