@@ -33,7 +33,7 @@
     dest: /root/
     remote_src: yes
 
-- name: remove existin MariaDB RPMs
+- name: remove existing MariaDB RPMs
   shell: yum -y remove mariadb-* MariaDB-*
 
 - name: install RPMs
