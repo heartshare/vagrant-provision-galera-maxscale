@@ -33,5 +33,13 @@
     dest: /root/
     remote_src: yes
 
+- name: remove existin MariaDB RPMs
+  shell: yum -y remove mariadb-* MariaDB-*
+
+- name: install RPMs
+  shell: yum -y localinstall mariadb-columnstore-*.rpm
+  args:
+    chdir: /root
+
 - name: enable/start glusterd service
   systemd: name=glusterd state=started enabled=True

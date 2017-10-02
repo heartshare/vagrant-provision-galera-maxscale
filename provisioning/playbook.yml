@@ -6,7 +6,7 @@
   environment:
     http_proxy: 192.168.18.170:3128
     https_proxy: 192.168.18.170:3128
-  sudo: yes
+  become: yes
   user: vagrant
   roles:
     - common
@@ -15,7 +15,7 @@
   environment:
     http_proxy: 192.168.18.170:3128
     https_proxy: 192.168.18.170:3128
-  sudo: yes
+  become: yes
   user: vagrant
   roles:
     - columnstore
