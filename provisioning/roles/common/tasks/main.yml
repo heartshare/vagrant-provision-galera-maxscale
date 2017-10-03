@@ -15,7 +15,6 @@
     - git
     - libselinux-python
     - epel-release
-    - python-pip
 
 - name: disable SELinux
   selinux: state=disabled
