@@ -5,6 +5,9 @@ https://mariadb.com/ja/downloads/columnstore
 https://downloads.mariadb.com/ColumnStore/1.1.0/centos/x86_64/7/mariadb-columnstore-1.1.0-1-centos7.x86_64.rpm.tar.gz
 594f6c3b6c18a3ae8515eac3f401370b00288ec8 mariadb-columnstore-1.1.0-1-centos7.x86_64.rpm.tar.gz
 
+download https://downloads.mariadb.com/ColumnStore/1.1.0/centos/x86_64/7/mariadb-columnstore-1.1.0-1-centos7.x86_64.rpm.tar.gz
+and copy to the directory where Vagranfile is located
+
 ## Requirements
 
 * Vagrant - Tool for working with VirtualBox images. [Download](https://www.vagrantup.com/downloads.html)

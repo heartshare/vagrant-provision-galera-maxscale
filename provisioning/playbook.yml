@@ -3,18 +3,18 @@
     locale: en_US.UTF-8
     keymap: jp106
     zone:   Asia/Tokyo
-  environment:
-    http_proxy: 192.168.18.170:3128
-    https_proxy: 192.168.18.170:3128
+#  environment:
+#    http_proxy: 192.168.18.170:3128
+#    https_proxy: 192.168.18.170:3128
   become: yes
   user: vagrant
   roles:
     - common
 
 - hosts: pm1:pm2:pm3
-  environment:
-    http_proxy: 192.168.18.170:3128
-    https_proxy: 192.168.18.170:3128
+#  environment:
+#    http_proxy: 192.168.18.170:3128
+#    https_proxy: 192.168.18.170:3128
   become: yes
   user: vagrant
   roles:
