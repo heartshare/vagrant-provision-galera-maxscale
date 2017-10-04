@@ -42,4 +42,4 @@
     chdir: /root
 
 - name: enable/start glusterd service
-  systemd: name=glusterd state=started enabled=True
+  systemd: name=glusterd state=restarted enabled=True

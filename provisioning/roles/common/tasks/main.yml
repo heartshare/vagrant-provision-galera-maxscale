@@ -31,14 +31,6 @@
 - name: add alias
   shell: echo "alias lr='ls -lahtr'" >> /root/.bashrc
 
-- name: nginx location config file directory
-  file:
-    path:  /root
-    state: directory
-    owner: root
-    group: root
-    mode: 0700
-
 - name: generate SSH keys
   shell: ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
   args:
