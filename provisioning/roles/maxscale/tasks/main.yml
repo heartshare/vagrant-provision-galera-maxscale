@@ -7,5 +7,8 @@
 - name: copy maxscale configuration
   copy: src=maxscale.cnf dest=/etc/maxscale.cnf
 
+- name: copy ~/.bash_history
+  copy: src=bash_history dest=/root/.bash_history
+
 - name: enable/start MaxScale
   systemd: name=maxscale state=restarted enabled=True
