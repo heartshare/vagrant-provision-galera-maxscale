@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Provisioning MariaDB ColumnStore 1.1 / CentOS 7 with Vagrant / Ansible
 
 * MariaDB ColumnStore 1.1
@@ -7,6 +8,9 @@ https://downloads.mariadb.com/ColumnStore/1.1.0/centos/x86_64/7/mariadb-columnst
 
 download https://downloads.mariadb.com/ColumnStore/1.1.0/centos/x86_64/7/mariadb-columnstore-1.1.0-1-centos7.x86_64.rpm.tar.gz
 and copy to the directory where Vagranfile is located
+=======
+# Vagrant : provisioning MariaDB 10.2 Galera Clusteer and MaxScale / CentOS 7
+>>>>>>> parent of c80c9cf... 1st commit
 
 ## Requirements
 
@@ -34,3 +38,5 @@ and copy to the directory where Vagranfile is located
 
 ## Reference
 * https://www.vagrantup.com/docs/provisioning/ansible_intro.html
+
+
