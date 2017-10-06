@@ -3,6 +3,9 @@
 - name: copy MariaDB Server Galera configuration template {{ hostvars[inventory_hostname]["ansible_eth1"]["ipv4"]["address"] }}
   template: src=galera.cnf dest=/etc/my.cnf.d/
 
+- name: copy .bash_history
+  template: src=bash_history dest=/root/.bash_history 
+
 - name: install MYSQL-python
   yum: name=MySQL-python state=present
 
