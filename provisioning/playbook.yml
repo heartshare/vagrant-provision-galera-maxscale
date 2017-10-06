@@ -24,4 +24,4 @@
   sudo: yes
   user: vagrant
   roles:
-    - maxcale
+    - maxscale
