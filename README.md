@@ -1,4 +1,4 @@
-# Vagrant : provisioning MariaDB ColumnStore 1.1 / CentOS 7
+# Provisioning MariaDB ColumnStore 1.1 / CentOS 7 with Vagrant / Ansible
 
 * MariaDB ColumnStore 1.1
 https://mariadb.com/ja/downloads/columnstore
