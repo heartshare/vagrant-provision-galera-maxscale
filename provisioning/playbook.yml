@@ -9,18 +9,18 @@
     - common
 
 - hosts: galera1:galera2:galera3
-  environment:
-    http_proxy: 192.168.18.1:3128
-    https_proxy: 192.168.18.1:3128
+  #  environment:
+  #  http_proxy: 192.168.18.1:3128
+  #  https_proxy: 192.168.18.1:3128
   become: yes
   user: vagrant
   roles:
     - galera
 
 - hosts: maxscale
-  environment:
-    http_proxy: 192.168.18.1:3128
-    https_proxy: 192.168.18.1:3128
+  #environment:
+  #  http_proxy: 192.168.18.1:3128
+  #  https_proxy: 192.168.18.1:3128
   sudo: yes
   user: vagrant
   roles:
