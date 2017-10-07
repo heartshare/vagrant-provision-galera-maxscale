@@ -4,10 +4,10 @@
   template: src=galera.cnf dest=/etc/my.cnf.d/
 
 - name: copy .bash_history
-  template: src=bash_history dest=/root/.bash_history
+  copy: src=bash_history dest=/root/.bash_history
 
 - name: copy .mysql_history
-  template: src=mysql_history dest=/root/mysql_history
+  copy: src=mysql_history dest=/root/.mysql_history
 
 - name: install MYSQL-python
   yum: name=MySQL-python state=present
