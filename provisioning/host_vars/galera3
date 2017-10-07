@@ -1,2 +1,2 @@
 server_id: 3
-is_primary: false
+is_master: false

@@ -12,8 +12,8 @@
     state:        latest
     update_cache: yes
 
-- name: enable/start MariaDB server
-  systemd:
-    name:    mariadb
-    state:   started
-    enabled: True
+# - name: enable/start MariaDB server
+#   systemd:
+#     name:    mariadb
+#     state:   started
+#     enabled: True

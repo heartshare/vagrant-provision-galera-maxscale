@@ -1,6 +1,0 @@
-- name: enable/start slave MariaDB servers
-  systemd:
-    name:    mariadb
-    state:   started
-    enabled: True
-    when:    not is_primary

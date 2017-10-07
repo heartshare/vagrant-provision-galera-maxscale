@@ -64,9 +64,7 @@
     line:     ''
 
 - name: restart sshd
-  systemd:
-    name: sshd
-    state: restarted
+  systemd: name=sshd state=restarted
 
 - name: copy /etc/hosts
   copy: src=hosts dest=/etc/hosts
