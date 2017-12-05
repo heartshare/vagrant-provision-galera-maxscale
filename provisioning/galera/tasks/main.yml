@@ -11,6 +11,7 @@
   systemd: name=mariadb state=started enabled=True
   when:    not is_master
 
+
 - name: install MYSQL-python
   yum: name=MySQL-python state=present
 
