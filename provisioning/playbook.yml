@@ -8,11 +8,11 @@
   roles:
     - common
 
-#- hosts: maxscale
-#  sudo: yes
-#  user: vagrant
-#  roles:
-#    - maxscale
+- hosts: maxscale
+ sudo: yes
+ user: vagrant
+ roles:
+   - maxscale
 
 - hosts: galera1
   become: yes
