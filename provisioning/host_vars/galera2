@@ -1,0 +1,3 @@
+server_id: 2
+is_master: false
+mdb_version: 10.2.15

@@ -1,0 +1,33 @@
+- name: install MariaDB 10.2 repository
+  yum_repository:
+    name:        mariadb
+    description: MariaDB
+    baseurl:     http://yum.mariadb.org/10.2/centos7-amd64
+    gpgkey:      https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+    gpgcheck:    1
+
+- name: MariaDB 10.2 RPM tar ball exists ?
+  stat: path=/vagrant/mariadb-{{ mdb_version }}-rhel-7-x86_64-rpms.tar
+  register: rpmtar
+
+- name: rpmtar
+  debug:
+    msg: rpmtar {{ rpmtar.stat.exists }}
+
+- name: tar xf RPM tar ball and install
+  shell: |
+    tar xf /vagrant/mariadb-{{ mdb_version }}-rhel-7-x86_64-rpms.tar -C /root
+    cd /root/mariadb-{{ mdb_version }}-rhel-7-x86_64-rpms
+    yum -y localinstall MariaDB-{{ mdb_version }}-*-x86_64-server.rpm \
+                        MariaDB-{{ mdb_version }}-*-client.rpm \
+                        MariaDB-{{ mdb_version }}-*-common.rpm \
+                        MariaDB-{{ mdb_version }}-*-compat.rpm
+  when: rpmtar.stat.exists
+
+- name: install MariaDB Server
+  yum: name=MariaDB-server state=latest update_cache=yes
+  when: not rpmtar.stat.exists
+
+- name: install MariaDB common
+  yum: name=MariaDB-common state=latest update_cache=yes
+  when: not rpmtar.stat.exists

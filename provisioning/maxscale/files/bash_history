@@ -1,0 +1,3 @@
+watch -n 1 maxctrl list servers
+maxctrl list servers
+systemctl restart maxscale
