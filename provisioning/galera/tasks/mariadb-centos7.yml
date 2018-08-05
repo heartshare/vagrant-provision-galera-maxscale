@@ -1,4 +1,4 @@
-- name: install MariaDB 10.3 repository
+- name: set up MariaDB {{ mdb_version }} repository
   yum_repository:
     name:        mariadb
     description: MariaDB
@@ -6,7 +6,7 @@
     gpgkey:      https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
     gpgcheck:    1
 
-- name: MariaDB 10.3 RPM tar ball exists ?
+- name: MariaDB {{ mdb_version }} RPM tar ball exists ?
   stat: path=/vagrant/mariadb-{{ mdb_version }}-rhel-7-x86_64-rpms.tar
   register: rpmtar
 
@@ -27,7 +27,7 @@
 - name: install MariaDB Server
   yum: name=MariaDB-server state=latest update_cache=yes
   when: not rpmtar.stat.exists
-
-- name: install MariaDB common
-  yum: name=MariaDB-common state=latest update_cache=yes
-  when: not rpmtar.stat.exists
+# 
+# - name: install MariaDB common
+#   yum: name=MariaDB-common state=latest update_cache=yes
+#   when: not rpmtar.stat.exists
