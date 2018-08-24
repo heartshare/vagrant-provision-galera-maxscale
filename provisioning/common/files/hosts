@@ -1,5 +1,6 @@
 127.0.0.1   localhost localhost.localdomain
 
+192.168.2.10  mxs
 192.168.2.11  galera1
 192.168.2.12  galera2
 192.168.2.13  galera3
