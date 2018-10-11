@@ -1,4 +1,4 @@
-# Provisioning MariaDB TX Cluster(Galera Cluster) + MaxScale 2.2 / CentOS 7 with Vagrant / Ansible
+# Provisioning MariaDB TX Cluster(Galera Cluster) + MaxScale 2.3 / CentOS 7 with Vagrant / Ansible
 
 ## Requirements
 
