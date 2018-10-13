@@ -1,4 +1,5 @@
 [mysqld]
+log_bin=mariadb-bin
 binlog_format=row
 binlog_row_image=full
 innodb_autoinc_lock_mode=2

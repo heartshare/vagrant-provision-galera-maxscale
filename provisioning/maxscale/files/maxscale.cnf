@@ -13,7 +13,7 @@ password=maxpwd
 server_id=2
 master_id=1
 binlogdir=/var/lib/maxscale
-filestem=mariad-bin
+filestem=mariadb-bin
 mariadb10_master_gtid=1
 mariadb10-compatibility=1
 
