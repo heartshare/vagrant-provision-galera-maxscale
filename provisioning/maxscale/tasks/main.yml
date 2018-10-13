@@ -1,7 +1,23 @@
-- name: MariaDB Package Repository Setup
-  shell: \
-    curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | \
-    sudo bash -s -- --mariadb-maxscale-version=2.2
+# - name: MariaDB Package Repository Setup
+#   shell: \
+#     curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | \
+#     sudo bash -s -- --mariadb-maxscale-version=2.2
+
+- name: install MaxScale 2.3 repository
+  yum_repository:
+    name:        maxscale
+    description: MaxScale
+    baseurl:     https://downloads.mariadb.com/MaxScale/2.3/rhel/$releasever/$basearch
+    gpgkey:      file:///etc/pki/rpm-gpg/MariaDB-MaxScale-GPG-KEY
+    gpgcheck:    1
+
+- name: install MariaDB 10.3 repository
+  yum_repository:
+    name:        mariadb
+    description: MariaDB
+    baseurl:     http://yum.mariadb.org/10.3/centos7-amd64
+    gpgkey:      https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+    gpgcheck:    1
 
 - name: install MaxScale 2.2
   yum: name=maxscale state=latest update_cache=yes
@@ -14,3 +30,6 @@
 
 - name: enable/start MaxScale
   systemd: name=maxscale state=restarted enabled=True
+
+- name: install MariaDB-client 10.3
+  yum: name=MariaDB-client state=latest update_cache=yes
