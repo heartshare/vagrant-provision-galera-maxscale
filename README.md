@@ -1,6 +1,6 @@
 # Provisioning MariaDB TX Cluster(Galera Cluster) + MaxScale 2.3 / CentOS 7 with Vagrant / Ansible
 
-## Requirements
+## Prerequisites
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VMware Workstation 12 Pro](https://www.vmware.com/products/workstation.html)
@@ -18,5 +18,12 @@
 
 * vagrant rsync
 
+## setup binlogrouter with multiple masters
+
+* mysql -h127.0.0.1 -umaxuser -pmaxpwd < start-slave1.sql
+* mysql -h127.0.0.1 -umaxuser -pmaxpwd < start-slave2.sql
+* mysql -h127.0.0.1 -umaxuser -pmaxpwd < start-slave3.sql
+
 ## Reference
 * https://www.vagrantup.com/docs/provisioning/ansible_intro.html
+* https://mariadb.com/kb/en/mariadb-enterprise/mariadb-maxscale-23-binlogrouter/#using-secondary-masters
