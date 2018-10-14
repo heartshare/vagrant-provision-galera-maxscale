@@ -8,7 +8,7 @@
     name:        maxscale
     description: MaxScale
     baseurl:     https://downloads.mariadb.com/MaxScale/2.3/rhel/$releasever/$basearch
-    gpgkey:      file:///etc/pki/rpm-gpg/MariaDB-MaxScale-GPG-KEY
+    gpgkey:      https://downloads.mariadb.com/MaxScale/MariaDB-MaxScale-GPG-KEY
     gpgcheck:    1
 
 - name: install MariaDB 10.3 repository
@@ -19,7 +19,8 @@
     gpgkey:      https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
     gpgcheck:    1
 
-- name: install MaxScale 2.2
+
+- name: install MaxScale 2.3
   yum: name=maxscale state=latest update_cache=yes
 
 - name: copy maxscale configuration
@@ -30,6 +31,7 @@
 
 - name: enable/start MaxScale
   systemd: name=maxscale state=restarted enabled=True
+
 
 - name: install MariaDB-client 10.3
   yum: name=MariaDB-client state=latest update_cache=yes
