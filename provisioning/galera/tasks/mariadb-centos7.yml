@@ -1,4 +1,4 @@
-- name: set up MariaDB {{ mdb_version }} repository
+- name: set up MariaDB 10.3 repository
   yum_repository:
     name:        mariadb
     description: MariaDB
@@ -27,7 +27,7 @@
 - name: install MariaDB Server
   yum: name=MariaDB-server state=latest update_cache=yes
   when: not rpmtar.stat.exists
-# 
+#
 # - name: install MariaDB common
 #   yum: name=MariaDB-common state=latest update_cache=yes
 #   when: not rpmtar.stat.exists

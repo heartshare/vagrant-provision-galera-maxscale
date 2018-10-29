@@ -19,9 +19,9 @@
   user: vagrant
   roles:
     - galera
-    
+
 - hosts: maxscale
-  sudo: yes
+  become: yes
   user: vagrant
   roles:
    - maxscale
