@@ -4,7 +4,7 @@
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VMware Workstation Pro](https://www.vmware.com/products/workstation.html)
-* [Ansible](https://www.ansible.com/)
+* [Red Hat Ansible](https://www.ansible.com/)
 
 ## create VM and provision MariaDB Server on CentOS 7
 

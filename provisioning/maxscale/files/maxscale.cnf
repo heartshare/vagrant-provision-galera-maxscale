@@ -21,8 +21,8 @@ mariadb10-compatibility=1
 type=listener
 service=replication-service
 protocol=mariadbclient
-port=3306
 address=0.0.0.0
+port=4006
 
 [Galera-Monitor]
 type=monitor
@@ -45,7 +45,7 @@ slave_selection_criteria=LEAST_CURRENT_OPERATIONS
 type=listener
 service=Splitter-Service
 protocol=mariadbclient
-port=4006
+port=3306
 #----------------------
 [galera1]
 type=server
