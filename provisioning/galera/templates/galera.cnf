@@ -1,4 +1,5 @@
 [mysqld]
+<<<<<<< HEAD
 log_bin=mariadb-bin
 binlog_format=row
 #binlog_row_image=full
@@ -6,9 +7,25 @@ innodb_autoinc_lock_mode=2
 innodb_flush_log_at_trx_commit=2
 log_error
 log_slave_updates
+=======
+binlog_format=ROW
+innodb_buffer_pool_size=64M
+innodb_autoinc_lock_mode=2
+innodb_flush_log_at_trx_commit=2
+#bind-address=0.0.0.0
+>>>>>>> github/master
 
 [galera]
 wsrep_on=ON
 wsrep_provider=/usr/lib64/galera/libgalera_smm.so
+<<<<<<< HEAD
 wsrep_cluster_address=gcomm://192.168.2.11,192.168.2.12,192.168.2.13
 wsrep_node_address={{ hostvars[inventory_hostname]["ansible_eth1"]["ipv4"]["address"] }}
+=======
+wsrep_cluster_name="test_cluster"
+wsrep_cluster_address=gcomm://192.168.18.121,192.168.18.122,192.168.18.123
+wsrep_node_address={{ hostvars[inventory_hostname]["ansible_eth1"]["ipv4"]["address"] }}
+server_id={{ server_id }}
+wsrep_sst_method=rsync
+gtid_ignore_duplicates=1
+>>>>>>> github/master

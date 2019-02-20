@@ -27,7 +27,7 @@
 - name: install MariaDB Server
   yum: name=MariaDB-server state=latest update_cache=yes
   when: not rpmtar.stat.exists
-# 
+#
 # - name: install MariaDB common
 #   yum: name=MariaDB-common state=latest update_cache=yes
 #   when: not rpmtar.stat.exists
