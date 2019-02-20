@@ -1,10 +1,7 @@
 .vagrant
 *.tar
 *.tar.gz
-<<<<<<< HEAD
 *.zip
 *.rpm
 *.tgz
 *~
-=======
->>>>>>> github/master
