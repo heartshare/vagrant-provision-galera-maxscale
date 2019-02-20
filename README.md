@@ -1,12 +1,12 @@
-# Provisioning MariaDB TX Cluster(Galera Cluster) + MaxScale 2.3 / CentOS 7 with Vagrant / Ansible
+# Provisioning MariaDB Cluster(Galera Cluster) + MaxScale 2.3 / CentOS 7 with Vagrant / Ansible
 
 ## Requirements
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
-* [VMware Workstation 12 Pro](https://www.vmware.com/products/workstation.html)
+* [VMware Workstation Pro](https://www.vmware.com/products/workstation.html)
 * [Ansible](https://www.ansible.com/)
 
-## create VM and provision MariaDB Server on CentOS 7
+## create CentOS 7 VMs and provision MariaDB Galera Cluster and MaxScale on CentOS 7
 
 * vagrant up
 

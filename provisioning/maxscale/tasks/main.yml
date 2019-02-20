@@ -1,9 +1,9 @@
 - name: MariaDB Package Repository Setup
   shell: \
     curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | \
-    sudo bash -s -- --mariadb-maxscale-version=2.2
+    sudo bash -s -- --mariadb-maxscale-version=2.3
 
-- name: install MaxScale 2.2
+- name: install MaxScale 2.3
   yum: name=maxscale state=latest update_cache=yes
 
 - name: copy maxscale configuration

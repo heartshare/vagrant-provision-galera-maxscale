@@ -3,26 +3,6 @@ threads=auto
 log_warning=1
 log_info=1
 log_notice=1
-log_debug=1
-
-[replication-service]
-type=service
-router=binlogrouter
-user=maxuser
-password=maxpwd
-server_id=2
-master_id=1
-binlogdir=/var/lib/maxscale
-filestem=mariad-bin
-mariadb10_master_gtid=1
-mariadb10-compatibility=1
-
-[replication-listener]
-type=listener
-service=replication-service
-protocol=mariadbclient
-port=3306
-address=0.0.0.0
 
 [Galera-Monitor]
 type=monitor
@@ -38,14 +18,12 @@ router=readwritesplit
 servers=galera1,galera2,galera3
 user=maxuser
 password=maxpwd
-max_slave_connections=100%
-router_options=slave_selection_criteria=LEAST_CURRENT_OPERATIONS
 
 [Splitter-Listener]
 type=listener
 service=Splitter-Service
 protocol=mariadbclient
-port=4006
+port=3306
 
 [Read-Connection-Router]
 type=service

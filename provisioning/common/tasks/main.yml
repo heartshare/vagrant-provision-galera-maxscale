@@ -1,11 +1,11 @@
-- name: set timezone to {{ zone }}
-  timezone:
-    name: "{{ zone }}"
-
-- name: set locale {{ keymap }}
-  shell: localectl set-keymap {{ keymap }}
-  register: set_locale
-  changed_when: false
+# - name: set timezone to {{ zone }}
+#   timezone:
+#     name: "{{ zone }}"
+#
+# - name: set locale {{ keymap }}
+#   shell: localectl set-keymap {{ keymap }}
+#   register: set_locale
+#   changed_when: false
 
 - name: install wget/git/libselinux-python
   yum: name={{ item }} state=latest
