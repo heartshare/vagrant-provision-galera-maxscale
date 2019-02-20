@@ -1,5 +1,4 @@
 show status like 'wsrep_cluster_%';
 show grants for maxuser@'%';
-show grants for maxadmin@'%';
 select user,host,password from mysql.user;
 select @@gtid_current_pos;
