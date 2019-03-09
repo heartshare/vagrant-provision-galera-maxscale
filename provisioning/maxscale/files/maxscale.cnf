@@ -4,6 +4,13 @@ log_warning=1
 log_info=1
 log_notice=1
 
+#[Masking]
+#type=filter
+#module=masking
+#rules=/etc/maxscale.modules.d/masking_rules.json
+#warn_type_mismatch=always
+#large_payload=ignore
+
 [Galera-Monitor]
 type=monitor
 module=galeramon
@@ -18,6 +25,7 @@ router=readwritesplit
 servers=galera1,galera2,galera3
 user=maxuser
 password=maxpwd
+#filters=Masking
 
 [Splitter-Listener]
 type=listener
