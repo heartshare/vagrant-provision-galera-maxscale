@@ -40,7 +40,6 @@ servers=galera1,galera2,galera3
 user=maxuser
 password=maxpwd
 
-router_options=slave
 [Read-Connection-Listener]
 type=listener
 service=Read-Connection-Router

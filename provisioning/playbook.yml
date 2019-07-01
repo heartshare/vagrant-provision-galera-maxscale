@@ -9,7 +9,7 @@
     - common
 
 - hosts: maxscale
-  sudo: yes
+  become: yes
   user: vagrant
   roles:
     - maxscale
