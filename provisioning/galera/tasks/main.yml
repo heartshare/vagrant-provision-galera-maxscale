@@ -5,11 +5,11 @@
 
 - name: bootstrap the Master node
   shell: galera_new_cluster
-  when:  is_master
+  when:  is_master|bool
 
 - name: enable/start MariaDB server on 2nd/3rd node
   systemd: name=mariadb state=started enabled=True
-  when:    not is_master
+  when: not is_master|bool
 
 
 - name: install MYSQL-python
