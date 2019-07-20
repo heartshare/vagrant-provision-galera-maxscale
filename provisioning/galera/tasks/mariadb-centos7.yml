@@ -21,13 +21,14 @@
 
 - name: install MariaDB server w/ yum -y localinstall
   shell: |
-    cd /root/mariadb-{{ mdb_version }}-rhel-7-x86_64-rpms
     yum -y localinstall MariaDB-server-{{ mdb_version }}-*.rpm \
                         MariaDB-client-{{ mdb_version }}-*.rpm \
                         MariaDB-common-{{ mdb_version }}-*.rpm \
                         MariaDB-compat-{{ mdb_version }}-*.rpm
+  args:
+    chdir: /root/mariadb-{{ mdb_version }}-rhel-7-x86_64-rpms
   when: rpmtar.stat.exists
 
-- name: install MariaDB Server from remote repo
+- name: install MariaDB-server from remote repo
   yum: name=MariaDB-server state=latest update_cache=yes
   when: not rpmtar.stat.exists
